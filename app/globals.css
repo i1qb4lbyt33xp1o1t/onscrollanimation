@@ -24,3 +24,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+body {
+  background-color: #111;
+  color: white;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  color: #4ade80;
+}
