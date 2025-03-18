@@ -6,9 +6,16 @@ import {
   FaHome, FaUser, FaProjectDiagram, FaCogs, FaBriefcase, FaEnvelope, 
   FaLinkedin, FaGithub, FaTwitter 
 } from "react-icons/fa";
+import { ReactNode } from "react";
+
+interface SectionWrapperProps {
+  id: string;
+  children: ReactNode;
+}
+
 
 // Wrapper untuk animasi scroll-in
-const SectionWrapper = ({ id, children }) => (
+const SectionWrapper: React.FC<SectionWrapperProps> = ({ id, children }) => (
   <motion.section
     id={id}
     initial={{ opacity: 0, y: 50 }} // Muncul dari bawah
@@ -20,6 +27,8 @@ const SectionWrapper = ({ id, children }) => (
     {children}
   </motion.section>
 );
+
+
 
 import { 
   FaShieldAlt, FaBug, FaLock, FaPython, FaNetworkWired, FaUserSecret 
@@ -70,10 +79,10 @@ export default function Home() {
   }, []);
 
   // Fungsi smooth scrolling
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
-
+  
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       
